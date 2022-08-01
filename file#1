@@ -1,0 +1,16 @@
+n, m = int(input()), int(input())
+list1 = [[0] * m for i in range(n)]
+for i in range(len(list1)):
+    list2 = input().split()
+    for k in range(len(list1[i])):
+        list1[i][k] = int(list2[k])
+list3 = []
+list4 = []
+count1 = list1[0][0]
+list4.append((0, 0))
+for i in range(len(list1)):
+    for k in range(len(list1[i])):
+        if list1[i][k] > count1:
+            count1 = list1[i][k]
+            list4.append((i, k))
+print(*list4[len(list4) - 1])
