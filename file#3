@@ -1,0 +1,18 @@
+def creating():
+    n = int(input())
+    list1 = [[0] * n for i in range(n)]
+    for i in range(len(list1)):
+        list2 = input().split()
+        for k in range(len(list1[i])):
+            list1[i][k] = int(list2[k])
+    for i in range(len(list1)):
+        for k in range(len(list1[i])):
+            count1 = 0
+            if i != k:
+                if list1[i][k] == list1[k][i]:
+                    count1 += 1
+                if count1 == 0:
+                    return False
+    return True
+if creating(): print('YES')
+else: print('NO')
